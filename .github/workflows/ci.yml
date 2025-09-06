@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [develop, main]
+  pull_requests:
+    branches: [develop, main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.25'
+
+      - name: Install dependencies
+        run: go mod download
+
+      - name: Validate format
+        run: go fmt ./...
+
+      - name: Lint
+        uses: golangci/golangci-lint-action@v3
+        with:
+          version: latest
+
+      - name: Ejecutar tests
+        run: go test ./... -v

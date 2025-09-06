@@ -1,1 +1,55 @@
-.env
+# Go build
+/bin/
+/build/
+/dist/
+*.exe
+*.test
+*.out
+
+# Go modules
+/go.sum
+/go.work
+
+# IDEs y editores
+.vscode/
+.idea/
+*.sw?
+*.sublime*
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Docker
+*.env
+*.env.local
+.envrc
+
+# Docker compose volumes
+/data/
+tmp/
+volumes/
+
+# Postman
+*.postman_environment.json
+*.postman_colletion.json
+
+# Sonar
+/.scannerwork/
+coverage.out
+sonar-report.xml
+
+# Test
+*.coverprofile
+coverage/
+testdata/
+
+# Node
+node_modules/
+
+# Workspace
+*.code-workspace
